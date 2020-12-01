@@ -1,0 +1,30 @@
+body {
+    background-color: linen;
+}
+
+.criminalsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.criminals {
+    border: black solid 1px; 
+    flex-basis: 25%; 
+    margin: 15px; 
+}
+
+
+.criminals__name {
+    text-align: center;
+    margin: 6px;
+    font-size: 15px;
+}
+
+.criminals__data {
+    margin-left: 10px;
+}
+
+.criminals__term__end {
+    margin-bottom: 10px;
+}
