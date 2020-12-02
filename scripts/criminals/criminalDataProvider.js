@@ -4,6 +4,10 @@ export const useCriminals = () => {
     return criminals.slice();
 };
 
+/* or could write the above as...
+export const useCriminals = () => criminals.slice();
+*/
+
 export const getCriminals = () => {
     return fetch("https://criminals.glassdale.us/criminals")
         .then(response => response.json())
@@ -51,8 +55,4 @@ REQUESTING DATA FROM AN API - and what to do with it...
 - getCriminals returns the results of calling fetch which is a promise object so getCriminals istelf 
 now returns a promise object
 - .then() means wait until getCriminals does its thing (ie the promise is resolved) THEN do the nect thing
-*/
-
-/*
-
 */
