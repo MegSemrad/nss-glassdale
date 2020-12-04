@@ -12,3 +12,11 @@ export const getConvictions = () => {
         }
     )
 };
+
+
+/*
+
+Question(s) to ask: 
+1. why not use .push when sending loggedCrimes into the empty convictions array
+
+*/

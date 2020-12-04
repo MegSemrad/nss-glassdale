@@ -6,6 +6,9 @@ export const useCriminals = () => {
 
 /* or could write the above as...
 export const useCriminals = () => criminals.slice();
+
+- either way we use .slice to get a copy of the criminals array because raw
+  data should always remain unchanged
 */
 
 export const getCriminals = () => {
@@ -48,8 +51,8 @@ REQUESTING DATA FROM AN API - and what to do with it...
 - 2nd .then() function receives what the above .then() returns which is response turned into array of 
   objects. So 'parsedCriminals' is an arguement that is a variable (as always) that will hold the data that 
   gets passed into the function. Then describe action want to take on that data. That action is to pass 
-  the data to 'officers' variable array so can set application state (the initial state will work with)
+  the data to 'criminals' variable array so can set application state (the initial state will work with)
 - So passing functions into functions as arguements that will be called internally when the time is right 
 
 - console.table - another way to console something but in a more readable way 
-*/ 
+*/
