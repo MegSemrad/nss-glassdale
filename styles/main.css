@@ -2,7 +2,7 @@ body {
     background-color: linen;
 }
 
-.criminalsContainer {
+#criminalsContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;

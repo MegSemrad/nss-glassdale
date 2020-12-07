@@ -1,4 +1,4 @@
-import { useConvictions, getConvictions } from "./ConvictionProvider.js"
+import { useConvictions, getConvictions } from "./convictionProvider.js"
 
 
 const contentTarget = document.querySelector(".filters__crime")
@@ -58,7 +58,7 @@ const render = convictionsCollection => {
             <option value="0">Please select a crime...</option>
             ${
                 convictionsCollection.map((crime) => 
-                  `<option ${crime.id}>${crime.name}</option>`
+                  `<option value=${crime.id}>${crime.name}</option>`
                 )
             }
         </select>
