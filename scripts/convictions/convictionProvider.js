@@ -9,7 +9,7 @@ export const getConvictions = () => {
         loggedCrimes => {
             console.log(loggedCrimes)
             convictions = loggedCrimes
-        }
+        }   
     )
 };
 
