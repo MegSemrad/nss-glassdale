@@ -40,7 +40,6 @@ eventHub.addEventListener('crimeChosen', event => {
            it will work
         */
         const convictions = useConvictions()
-        debugger;
         const conviction = convictions.find( (conviction) => conviction.id === parseInt(event.detail.crimeThatWasChosen) )
         console.log(event.detail.crimeThatWasChosen, convictions)
 
