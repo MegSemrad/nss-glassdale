@@ -1,7 +1,7 @@
 import { saveNote } from './NoteProvider.js'
 
 const contentTarget = document.querySelector(".noteFormContainer")
-const EventHub = document.querySelector("")
+const eventHub = document.querySelector(".container")
 
 // Handle browser-generated click event in component
 eventHub.addEventListener("click", clickEvent => {
@@ -30,10 +30,6 @@ eventHub.addEventListener("click", clickEvent => {
         saveNote(newNote)
     }
 })
-
-const NoteForm = () => {
-    // rest of the code here
-}
 
 const render = () => {
     contentTarget.innerHTML = `
