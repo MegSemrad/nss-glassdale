@@ -46,7 +46,7 @@ const render = officersCollection => {
             <option value="0">Please select an officer...</option>
             ${
                  officersCollection.map((officer) => 
-          `<option value=${officer.id}>${officer.name}</option>`
+          `<option value=${officer.name}>${officer.name}</option>`
             )
             }
 </select>

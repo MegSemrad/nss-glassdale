@@ -2,9 +2,9 @@ import { getCriminals, useCriminals } from './criminalDataProvider.js'
 import { Criminals } from './criminals.js'
 import { useConvictions } from '../convictions/convictionProvider.js'
 
+
 const criminalElement = document.querySelector("#criminalsContainer")
 const eventHub = document.querySelector(".container")
-
 
 
 
@@ -16,6 +16,16 @@ const render = (perps) => {
 
     criminalElement.innerHTML = criminalCards.join("")
 
+}
+
+
+
+export const CriminalList = () => {
+    getCriminals()
+    .then( () => { 
+        let perps = useCriminals()
+        render(perps)
+    })
 }
 
 
@@ -40,7 +50,7 @@ eventHub.addEventListener('crimeChosen', event => {
            it will work
         */
         const convictions = useConvictions()
-        const conviction = convictions.find( (conviction) => conviction.id === parseInt(event.detail.crimeThatWasChosen) )
+        const conviction = convictions.find( (c) => c.id === parseInt(event.detail.crimeThatWasChosen) )
         console.log(event.detail.crimeThatWasChosen, convictions)
 
         const criminals = useCriminals()
@@ -51,13 +61,3 @@ eventHub.addEventListener('crimeChosen', event => {
     }
 
 })
-
-export const CriminalList = () => {
-    getCriminals().then( () => { 
-        let perps = useCriminals()
-        render(perps)
-    })
-}
-
-
-
