@@ -64,7 +64,3 @@ const render = convictionsCollection => {
         </select>
     `
 }
-
-
-
-
