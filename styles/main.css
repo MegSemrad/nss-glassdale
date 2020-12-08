@@ -2,6 +2,7 @@ body {
     background-color: linen;
 }
 
+
 #criminalsContainer {
     display: flex;
     flex-wrap: wrap;
