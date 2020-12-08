@@ -31,7 +31,7 @@
     {
       "author": "Becky Ashworth",
       "text": "Driving on expired license...again",
-      "suspect": "Rinaldo Da Vinic ",
+      "suspect": "Rinaldo Da Vinic",
       "timestamp": 1607456515165,
       "id": 5
     },
@@ -41,6 +41,13 @@
       "suspect": "Harry Tolbert ",
       "timestamp": 1607456577794,
       "id": 6
+    },
+    {
+      "author": "Harriet McLeod",
+      "text": "Ran from restaurant before paying bill",
+      "suspect": "Tracey Dale",
+      "timestamp": 1607458110712,
+      "id": 7
     }
   ]
 }

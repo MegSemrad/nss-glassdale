@@ -10,6 +10,7 @@ eventHub.addEventListener("change", changeEvent => {
     if (changeEvent.target.id === "officerSelect") {
         // Get the name of the selected officer
         const selectedOfficer = changeEvent.target.value
+        console.log(selectedOfficer) // only consoles the first name - issue!!!!
 
         // Define a custom event
         const customEvent = new CustomEvent("officerSelected", {
@@ -17,6 +18,7 @@ eventHub.addEventListener("change", changeEvent => {
                 officer: selectedOfficer
             }
         })
+
 
         // Dispatch event to event hub
         eventHub.dispatchEvent(customEvent)
@@ -52,5 +54,7 @@ const render = officersCollection => {
         </select>
     `
 }
+
+
 
 
