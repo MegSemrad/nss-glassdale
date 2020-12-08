@@ -3,10 +3,25 @@ body {
 }
 
 
+h1 {
+    text-align: center;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+}
+
+.filter {
+    margin: 10px;
+}
+
 #criminalsContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    float: left;
+    flex: 5;
 }
 
 .criminals {
@@ -28,4 +43,26 @@ body {
 
 .criminals__term__end {
     margin-bottom: 10px;
+}
+
+.noteFormContainer {
+    display: flex;
+}
+
+.cardsAndShowNotesButtonContainer {
+    display: flex;
+}
+
+.noteListContainer {
+    margin-top: 14px;
+}
+
+.asideParent {
+    display: flex;
+    float: right;
+    flex: 1.5;
+}
+
+.note {
+    margin: 20px 0px;
 }
