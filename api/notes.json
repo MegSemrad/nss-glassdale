@@ -13,6 +13,34 @@
       "suspect": "Mack McDunner",
       "timestamp": 1607448432888,
       "id": 2
+    },
+    {
+      "author": "Gale Foster",
+      "text": "Disturbed the peace",
+      "suspect": "Alex Traynor",
+      "timestamp": 1607455870571,
+      "id": 3
+    },
+    {
+      "author": "Paul Lasser",
+      "text": "Forged checks to pay for \"much needed\" vacation",
+      "suspect": "Trey Gale",
+      "timestamp": 1607456103507,
+      "id": 4
+    },
+    {
+      "author": "Becky Ashworth",
+      "text": "Driving on expired license...again",
+      "suspect": "Rinaldo Da Vinic ",
+      "timestamp": 1607456515165,
+      "id": 5
+    },
+    {
+      "author": "Clarence Smith",
+      "text": "Failed to show for jury duty",
+      "suspect": "Harry Tolbert ",
+      "timestamp": 1607456577794,
+      "id": 6
     }
   ]
 }
