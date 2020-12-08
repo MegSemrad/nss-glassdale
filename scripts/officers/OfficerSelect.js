@@ -49,6 +49,8 @@ const render = officersCollection => {
           `<option value=${officer.name}>${officer.name}</option>`
             )
             }
-</select>
+        </select>
     `
 }
+
+
