@@ -30,8 +30,6 @@ export const CriminalList = () => {
 }
 
 
-
-
 // Listen for the custom event you dispatched in ConvictionSelect
 /*
 - Note about the function parameter below. I have labeled it 'event' - and that 

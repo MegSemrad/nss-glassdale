@@ -41,14 +41,19 @@ export const OfficerSelect = () => {
  */
 
 
-
+/*
+- In <option> tag below where there is a value of "${officer.name}" have 
+  to use the "" around it whereas before we did not. This is because there
+  is a space between the first name and surname. Without the "" only the 
+  first name will be grabbed
+*/
 const render = officersCollection => {
     contentTarget.innerHTML = `
         <select class="dropdown" id="officerSelect">
             <option value="0">Please select an officer...</option>
             ${
                  officersCollection.map((officer) => 
-          `<option value=${officer.name}>${officer.name}</option>`
+          `<option value="${officer.name}">${officer.name}</option>`
             )
             }
         </select>
