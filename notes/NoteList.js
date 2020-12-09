@@ -16,9 +16,18 @@ eventHub.addEventListener("noteStateChanged", () => {
 
 const render = (noteArray) => {
     const allNotesConvertedToStrings = noteArray.map((note) => NoteHTMLConverter(note)).join("")
-        // convert the notes objects to HTML with NoteHTMLConverter
-        // This gives back a string of HTML
-
+        /*
+            - .map is expecting a function to be passed in as an arguement 
+            - Side note: all array methods like .map() and .filter() and .find() are
+              expecting an arguement that is a function
+            - This above  function gives instructions are what to do with each item 
+              in the array - which here is to convert the note objects to HTML 
+              with NoteHTMLConverter
+            - This gives back a string of HTML - because browser does not deal with
+              objects (and it is objects that are within the array we are mapping)
+            - allNotesConvertedToStrings value is the result of the map function and 
+              the result of any .map function is an array
+        */
     contentTarget.innerHTML = allNotesConvertedToStrings
 }
 //  The result of a map function is always an array
