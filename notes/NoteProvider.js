@@ -23,6 +23,7 @@ export const getNotes = () => {
 -JSON.stringify - the preferred way of sending data back and forth is a string rather 
  than an object so we turn it into a string first 
 */
+
 /*
 - This saveNote is passing through as an arguement any newNote that was created in NoteForm.js
 - Below fetchs the API because we need to interact with it
