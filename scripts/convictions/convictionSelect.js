@@ -39,7 +39,7 @@ export const ConvictionSelect = () => {
     .then( () => {
       const convictions = useConvictions()
       render(convictions)
-    })
+    });
 }
 
 
@@ -53,7 +53,7 @@ export const ConvictionSelect = () => {
 */
 
 const render = convictionsCollection => {
-    contentTarget.innerHTML = `
+    return contentTarget.innerHTML = `
         <select class="dropdown" id="crimeSelect">
             <option value="0">Please select a crime...</option>
             ${

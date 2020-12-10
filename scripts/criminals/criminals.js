@@ -1,3 +1,5 @@
+const eventHub = document.querySelector(".document");
+
 export const Criminals = (criminalObject) => {
     return `
         <section class="criminals">
@@ -6,6 +8,14 @@ export const Criminals = (criminalObject) => {
             <div class="criminals__crime criminals__data">Crime: ${criminalObject.conviction}</div>
             <div class="criminals__term__start criminals__data">Start: ${new Date(criminalObject.incarceration.start).toLocaleDateString('en-US')}</div>
             <div class="criminals__term__end criminals__data">Release: ${new Date(criminalObject.incarceration.end).toLocaleDateString('en-US')}</div>
+            <button id="associates--${criminalObject.id}">Associate Alibis</button>
         </section>
     `
+};
+
+
+eventHub.addEventListener("click", clickEvent => {
+    if(clickEvent.target.id ==="associates--${criminalObject.id}"){
+        const [prefix, id] = 
+    }
 }
