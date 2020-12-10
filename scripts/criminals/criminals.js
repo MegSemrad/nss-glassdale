@@ -15,7 +15,14 @@ export const Criminals = (criminalObject) => {
 
 
 eventHub.addEventListener("click", clickEvent => {
-    if(clickEvent.target.id ==="associates--${criminalObject.id}"){
-        const [prefix, id] = 
+    if(clickEvent.target.id.startsWith("associates--")){
+        const [prefix, id] = clickEvent.target.id.split("--")
+    
+        const idChosenEvent = new CustomEvent("idChosen", {
+            detail: {
+                id: chosenId
+            }
+    })
+    eventHub.dispatchEvent(idChosenEvent);
     }
-}
+});

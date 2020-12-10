@@ -22,15 +22,14 @@ ShowNoteButton();
     associates and alibis)
 - Do not need new provider - dealing with CriminalProvider.js - loop over to find criminal want
  and do that in AssociateAlibiDisplay.js
-
- 
 - Criminal.js should listen for click and dispatch custom event ("KnownAssociatesClicked") 
   because that is where button lives - to alert other modules that the associate 
   button has been clicked
 - AssociateDisplay.js listens for "KnownAssociatesClicked" event 
 - Need to send criminal id as data (detail) and AssociateAlibiDisplay.js component 
   needs to FIND criminal with matching id
+  
 - Loop over the found criminal's known_associates and dispaly them 
 - Create new DOM element for this to go into (a dialouge box is the adventurous choice - 
-    but to just get it working can use sth like section) 
+  but to just get it working can use sth like section) 
 */
