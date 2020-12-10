@@ -1,4 +1,4 @@
-const eventHub = document.querySelector(".document");
+const eventHub = document.querySelector(".container");
 
 export const Criminals = (criminalObject) => {
     return `
@@ -20,7 +20,7 @@ eventHub.addEventListener("click", clickEvent => {
     
         const idChosenEvent = new CustomEvent("idChosen", {
             detail: {
-                id: chosenId
+                chosenId: id
             }
     })
     eventHub.dispatchEvent(idChosenEvent);
