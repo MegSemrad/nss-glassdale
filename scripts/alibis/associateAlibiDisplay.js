@@ -3,6 +3,15 @@ import { getCriminals, useCriminals } from './criminalDataProvider.js';
 const contentTarget = document.querySelector(".associateAlibiContainer");
 const eventHub = document.querySelector(".container");
 
+
+eventHub.addEventListener("idChosen", customEvent => {
+    if(customEvent.detail.id !== "0") {
+        
+    }
+    // FIND criminal with matching id
+})
+
+
 export const associateAlibiSelect = () => {
     getCriminals()
     .then( () => {
