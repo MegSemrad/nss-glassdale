@@ -1,5 +1,5 @@
-const eventHub = document.querySelector(".container");
-const contentTarget = document.querySelector("#criminalsContainer");
+// const eventHub = document.querySelector(".container");
+// const contentTarget = document.querySelector("#criminalsContainer");
 
 
 
