@@ -12,7 +12,7 @@ export const witnessButton = () => {
 export const witnessCollection = () => {
     eventHub.addEventListener("click", clickEvent => {
         if(clickEvent.target.id === "witnessButton") {
-            
+           const witnessButtonClickEvent = new CustomEvent("witnessButtonClicked", )
         }
     })
 }
