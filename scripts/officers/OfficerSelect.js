@@ -1,31 +1,8 @@
 import { useOfficers, getOfficers } from './OfficerDataProvider.js'
 
+
 const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".filters__officer")
-
-
-// On the event hub, listen for a "change" event.
-eventHub.addEventListener("change", changeEvent => {
-    // Only do this if the `officerSelect` element was changed
-    if (changeEvent.target.id === "officerSelect") {
-        // Get the name of the selected officer
-        const selectedOfficer = changeEvent.target.value
-        console.log(selectedOfficer) // only consoles the first name - issue!!!!
-
-        // Define a custom event
-        const customEvent = new CustomEvent("officerSelected", {
-            detail: {
-                officer: selectedOfficer
-            }
-        })
-
-
-        // Dispatch event to event hub
-        eventHub.dispatchEvent(customEvent)
-    }
-})
-
-
 
 
 export const OfficerSelect = () => {
@@ -59,6 +36,27 @@ const render = officersCollection => {
         </select>
     `
 }
+
+// On the event hub, listen for a "change" event.
+eventHub.addEventListener("change", changeEvent => {
+    // Only do this if the `officerSelect` element was changed
+    if (changeEvent.target.id === "officerSelect") {
+        // Get the name of the selected officer
+        const selectedOfficer = changeEvent.target.value
+        console.log(selectedOfficer) 
+
+        // Define a custom event
+        const customEvent = new CustomEvent("officerSelected", {
+            detail: {
+                officer: selectedOfficer
+            }
+        })
+
+        // Dispatch event to event hub
+        eventHub.dispatchEvent(customEvent)
+    }
+})
+
 
 
 

@@ -1,10 +1,10 @@
-import { getCriminals, useCriminals } from './criminalDataProvider.js'
-import { Criminals } from './criminals.js'
-import { useConvictions } from '../convictions/convictionProvider.js'
+import { getCriminals, useCriminals } from './criminalDataProvider.js';
+import { Criminals } from './criminals.js';
+import { useConvictions } from '../convictions/convictionProvider.js';
 
 
-const criminalElement = document.querySelector("#criminalsContainer")
-const eventHub = document.querySelector(".container")
+const criminalElement = document.querySelector("#criminalsContainer");
+const eventHub = document.querySelector(".container");
 
 
 
@@ -16,8 +16,7 @@ const render = (perps) => {
     }
 
     criminalElement.innerHTML = criminalCards.join("")
-
-}
+};
 
 
 
@@ -27,7 +26,7 @@ export const CriminalList = () => {
         let perps = useCriminals()
         render(perps)
     })
-}
+};
 
 
 // Listen for the custom event you dispatched in ConvictionSelect
@@ -65,14 +64,14 @@ eventHub.addEventListener('crimeChosen', event => {
         render(matchingCriminals)
     }
 
-})
+});
 
 
 eventHub.addEventListener("officerSelected", event => {
-    // How can you access the officer name that was selected by the user?
+    // Accessing officer's name and storing in variable
     const officerName = event.detail.officer
 
-    // How can you get the criminals that were arrested by that officer?
+    // Get criminals arrested by that officer
     const criminals = useCriminals()
     const chosenOfficers = 
     criminals.filter(
@@ -84,6 +83,6 @@ eventHub.addEventListener("officerSelected", event => {
         }
         )
         render(chosenOfficers);
-    })
+    });
 
 

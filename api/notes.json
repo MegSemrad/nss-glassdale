@@ -3,51 +3,9 @@
     {
       "author": "Margaret Lewis",
       "text": "Robbed bank with bare hands",
-      "suspect": "Sylvia Sullivan",
+      "suspectId": 1,
       "timestamp": 1607376859206,
       "id": 1
-    },
-    {
-      "author": "Ben Hoffman",
-      "text": "Busted out window of neighbor's home. ",
-      "suspect": "Mack McDunner",
-      "timestamp": 1607448432888,
-      "id": 2
-    },
-    {
-      "author": "Gale Foster",
-      "text": "Disturbed the peace",
-      "suspect": "Alex Traynor",
-      "timestamp": 1607455870571,
-      "id": 3
-    },
-    {
-      "author": "Paul Lasser",
-      "text": "Forged checks to pay for \"much needed\" vacation",
-      "suspect": "Trey Gale",
-      "timestamp": 1607456103507,
-      "id": 4
-    },
-    {
-      "author": "Becky Ashworth",
-      "text": "Driving on expired license...again",
-      "suspect": "Rinaldo Da Vinic",
-      "timestamp": 1607456515165,
-      "id": 5
-    },
-    {
-      "author": "Clarence Smith",
-      "text": "Failed to show for jury duty",
-      "suspect": "Harry Tolbert ",
-      "timestamp": 1607456577794,
-      "id": 6
-    },
-    {
-      "author": "Harriet McLeod",
-      "text": "Ran from restaurant before paying bill",
-      "suspect": "Tracey Dale",
-      "timestamp": 1607458110712,
-      "id": 7
     }
   ]
 }
