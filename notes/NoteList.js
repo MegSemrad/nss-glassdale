@@ -1,4 +1,4 @@
-import { getNotes, useNotes } from "./NoteProvider.js";
+import { getNotes, useNotes, deleteNote } from "./NoteProvider.js";
 import { NoteHTMLConverter } from "./Note.js";
 import { useCriminals } from "../scripts/criminals/criminalDataProvider.js"
 
@@ -13,6 +13,23 @@ eventHub.addEventListener("showNotesClicked", () => {
 
 eventHub.addEventListener("noteStateChanged", () => {
     NoteList()
+})
+
+eventHub.addEventListener("click", clickEvent => {
+  if (clickEvent.target.id.startsWith("deleteNote--")) {
+      const [prefix, noteId] = clickEvent.target.id.split("--")
+
+      // array destructoring 
+      // produces an array ["deleteNote--", "4"] 
+
+      /*
+          Invoke the function that performs the delete operation.
+
+          Once the operation is complete you should THEN invoke
+          useNotes() and render the note list again.
+      */
+     deleteNote(noteId)
+  }
 })
 
 const render = (noteArray, criminals) => {

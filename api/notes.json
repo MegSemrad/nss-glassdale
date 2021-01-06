@@ -1,11 +1,18 @@
 {
   "notes": [
     {
-      "author": "Margaret Lewis",
-      "text": "Robbed bank with bare hands",
-      "suspectId": 1,
-      "timestamp": 1607376859206,
-      "id": 1
+      "author": "Howard Smith",
+      "text": "There's no way he is innocent",
+      "criminalId": 13,
+      "timestamp": 1609950875871,
+      "id": 2
+    },
+    {
+      "author": "Margaret Tolbat ",
+      "text": "I have security footage of her robbing the bank.",
+      "criminalId": 27,
+      "timestamp": 1609950991527,
+      "id": 3
     }
   ]
 }
