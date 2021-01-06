@@ -1,4 +1,5 @@
 import { saveNote } from './NoteProvider.js'
+import { useCriminals, getCriminals } from "../scripts/criminals/criminalDataProvider.js"
 
 const contentTarget = document.querySelector(".noteFormContainer")
 const eventHub = document.querySelector(".container")
@@ -18,14 +19,17 @@ eventHub.addEventListener("click", clickEvent => {
 
        const author = document.querySelector("#author").value
        const text = document.querySelector("#text").value
-       const suspect = document.querySelector("#suspect").value
+       const criminalId = parseInt(document.querySelector("#suspect").value)
         
         const newNote = {
             author: author,
             text: text, 
-            suspect: suspect,
+            criminalId: criminalId,
             timestamp: Date.now()
         }
+      
+        // COuld have written the above object key:value pairs as {author, text, criminalId (but not for timestamp!)
+      // this is a shorthand for Javascript when the key and value are the same}
 
         
         /*
@@ -37,16 +41,31 @@ eventHub.addEventListener("click", clickEvent => {
 })
 
 const render = () => {
+    const criminalsCollection = useCriminals()
     contentTarget.innerHTML = `
         <input type="text" id="author" placeholder="author name">
         <textarea id="text" placeholder="note text"></textarea>
-        <input type="text" id="suspect" placeholder="suspect name">
+        <select id="suspect" class="dropdown">
+          <option value="0">Please select a suspect...</option>
+          ${
+            criminalsCollection.map(
+              (criminal) => `
+                <option value=${criminal.id}>
+                  ${criminal.name}
+                </option>
+            `)
+          }
+        </select>
         <button id="saveNote">Save Note</button>
     `
 }
+// Map over array and mutate each thing in array and each thing is an object and telling it to return a string
+// Return sth from function map takes that and puts it into new array 
+// End up with an array of... the new array is what gets interpalated 
 
 
 
 export const NoteForm = () => {
-    render()
-}
+  getCriminals()
+  .then( () => render())
+};
