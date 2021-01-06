@@ -19,7 +19,7 @@ const render = (noteArray, criminals) => {
     const allNotesConvertedToStrings = noteArray.map((note) =>{
       const associatedCriminal = criminals.find(
         (criminal) => {
-          return criminal.id === note.suspectId
+          return criminal.id === note.criminalId
         }
       )
       note.criminalName = associatedCriminal.name
