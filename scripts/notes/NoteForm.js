@@ -1,5 +1,5 @@
 import { saveNote } from './NoteProvider.js'
-import { useCriminals, getCriminals } from "../scripts/criminals/criminalDataProvider.js"
+import { useCriminals, getCriminals } from "../criminals/criminalDataProvider.js"
 
 const contentTarget = document.querySelector(".noteFormContainer")
 const eventHub = document.querySelector(".container")

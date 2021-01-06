@@ -1,6 +1,6 @@
 import { getNotes, useNotes, deleteNote } from "./NoteProvider.js";
 import { NoteHTMLConverter } from "./Note.js";
-import { useCriminals } from "../scripts/criminals/criminalDataProvider.js"
+import { useCriminals } from "../criminals/criminalDataProvider.js"
 
 // Query the DOM for the element that your notes will be added to 
 const contentTarget = document.querySelector(".noteList")
