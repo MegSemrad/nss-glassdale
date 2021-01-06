@@ -46,3 +46,15 @@ export const saveNote = note => {
     .then(getNotes)
     .then(dispatchStateChangeEvent)
 }
+
+
+export const deleteNote = noteId => {
+    return fetch(`http://localhost:8088/notes/${noteId}`, {
+        method: "DELETE"
+    })
+        .then(getNotes)
+        .then(dispatchStateChangeEvent)
+}
+
+// This deleteNote must go here because this module handles data collectino 
+// Again must have the noteId on there so do not delete everything 
