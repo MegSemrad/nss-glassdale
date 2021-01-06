@@ -1,6 +1,6 @@
 import { getNotes, useNotes } from "./NoteProvider.js";
 import { NoteHTMLConverter } from "./Note.js";
-import { useCriminals } from "../criminals/criminalDataProvider.js";
+import { useCriminals } from "../scripts/criminals/criminalDataProvider.js"
 
 // Query the DOM for the element that your notes will be added to 
 const contentTarget = document.querySelector(".noteList")
@@ -19,11 +19,11 @@ const render = (noteArray, criminals) => {
     const allNotesConvertedToStrings = noteArray.map((note) =>{
       const associatedCriminal = criminals.find(
         (criminal) => {
-          return criminal.id === note.criminal.id
+          return criminal.id === note.suspectId
         }
       )
       note.criminalName = associatedCriminal.name
-      NoteHTMLConverter(note)
+      return NoteHTMLConverter(note)
 }).join("")
   
         /*

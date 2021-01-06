@@ -1,10 +1,9 @@
 import { useConvictions, getConvictions } from "./convictionProvider.js"
 
 
+
 const contentTarget = document.querySelector(".filters__crime")
 const eventHub = document.querySelector(".container")
-
-
 
 
 
