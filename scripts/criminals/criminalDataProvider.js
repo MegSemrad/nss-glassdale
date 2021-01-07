@@ -42,9 +42,9 @@ REQUESTING DATA FROM AN API - and what to do with it...
     - Look above..."response" is the argument in that first .then() function and within that 
       function let it know how want that returned data handled. Naming convention is to call is 
       "response" as we are receiving a response from the server
-    - this .then(reponse => response.json()) is taking the response from the browser (which will be the 
-      requested data) and telling the function to run a method to convert that json into an array of 
-      objects can work on in javascript
+    - this .then(reponse => response.json()) is taking the response from the browser (which will be a 
+      STRING i.e. the requested data) and telling the function to run a method to convert that json 
+      string into a javascript datatype. This could be an array or object, etc. 
     - that is an anonymous function that is being passed into .then as an arguement - we don't 
       call it because it is called internally when the time is right - time will be right when data 
       is returned from API
