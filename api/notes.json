@@ -20,6 +20,20 @@
       "criminalId": 94,
       "timestamp": 1609953001113,
       "id": 4
+    },
+    {
+      "author": "Tim Henderson",
+      "text": "This guy mugged me and took everything ",
+      "criminalId": 96,
+      "timestamp": 1610052599054,
+      "id": 5
+    },
+    {
+      "author": "Helen Baldwin",
+      "text": "Just looks downright shady ",
+      "criminalId": 98,
+      "timestamp": 1610052646401,
+      "id": 6
     }
   ]
 }
