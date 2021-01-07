@@ -1,6 +1,8 @@
 import { getCriminals, useCriminals } from './criminalDataProvider.js';
 import { Criminals } from './criminals.js';
 import { useConvictions } from '../convictions/convictionProvider.js';
+import { getFacilities, useFacilities } from '../facilities/facilityProvider.js';
+import { getCriminalFacilities, useCriminalFacilities } from '../facilities/criminalFacilityProvider.js';
 
 
 const criminalElement = document.querySelector("#criminalsContainer");
@@ -8,24 +10,30 @@ const eventHub = document.querySelector(".container");
 
 
 
+let criminals = [];
+let facilities = [];
+let criminalFacilities = [];
 
-const render = (perps) => {
-    let criminalCards = []
-    for (const perp of perps) {
-        criminalCards.push(Criminals(perp))
-    }
-
-    criminalElement.innerHTML = criminalCards.join("")
-};
+// Holders of current state of data, even if data changes 
 
 
 
 export const CriminalList = () => {
-    getCriminals()
-    .then( () => { 
-        let perps = useCriminals()
-        render(perps)
-    })
+    // Kick off the fetching of both collections of data
+        getCriminals()
+        .then(getFacilities)
+        .then(getCriminalFacilities)
+        .then(
+            () => {
+                // Pull in the data now that it has been fetched
+                criminals = useCriminals()
+                facilities = useFacilities()
+                criminalFacilities = useCriminalFacilities()
+
+                // Pass all three collections of data to render()
+                render(criminals)
+            }
+        )
 };
 
 
@@ -57,8 +65,8 @@ eventHub.addEventListener('crimeChosen', event => {
         const convictions = useConvictions()
         const conviction = convictions.find( (c) => c.id === parseInt(event.detail.crimeThatWasChosen) )
 
-        const criminals = useCriminals()
-        const matchingCriminals = criminals.filter( (criminal) => 
+        const criminalsToFilter = criminals.slice()
+        const matchingCriminals = criminalsToFilter.filter( (criminal) => 
             criminal.conviction === conviction.name)
 
         render(matchingCriminals)
@@ -86,3 +94,23 @@ eventHub.addEventListener("officerSelected", event => {
     });
 
 
+  
+    const render = (criminalList) => {
+        // Step 1 - Iterate all criminals
+        criminalElement.innerHTML = criminalList.map(
+            (criminalObject) => {
+                // Step 2 - Filter all relationships to get only ones for this criminal
+                const facilityRelationshipsForThisCriminal = criminalFacilities.filter(cf => cf.criminalId === criminalObject.id)
+    
+                // Step 3 - Convert the relationships to facilities with map()
+                // facilities will be an array 
+                const matchingFacilities = facilityRelationshipsForThisCriminal.map(cf => {
+                    const matchingFacilityObject = facilities.find(facility => facility.id === cf.facilityId)
+                    return matchingFacilityObject
+                })
+    
+                // Must pass the matching facilities to the Criminal component
+                return Criminals(criminalObject, matchingFacilities)
+            }
+        ).join("")
+    }
