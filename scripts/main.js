@@ -5,18 +5,14 @@ import { NoteForm } from './notes/NoteForm.js';
 import { ShowNoteButton } from './notes/ShowNotesButton.js';
 import './notes/NoteList.js';
 import './alibis/associateAlibiDisplay.js';
-// import { witnessButton } from './witnesses/witnesses.js';
-/*
-- We are importing '../notes/NoteList.js' because....
-  
-*/
+
 
 CriminalList();
 ConvictionSelect(); 
 OfficerSelect();
 NoteForm();
 ShowNoteButton();
-// witnessButton();
+
 
 
 /* CHAPTER 8 ALIBIS
