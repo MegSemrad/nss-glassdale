@@ -28,21 +28,24 @@ h1 {
     border: black solid 1px; 
     flex-basis: 25%; 
     margin: 15px; 
+    padding: 10px
 }
 
 
 .criminals__name {
     text-align: center;
     margin: 6px;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 .criminals__data {
     margin-left: 10px;
 }
 
-.criminals__term__end {
-    margin-bottom: 10px;
+.facilities__title {
+    text-align: center;
+    margin: 6px;
+    font-size: 15px;
 }
 
 .noteFormContainer {

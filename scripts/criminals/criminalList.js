@@ -5,16 +5,32 @@ import { getFacilities, useFacilities } from '../facilities/facilityProvider.js'
 import { getCriminalFacilities, useCriminalFacilities } from '../facilities/criminalFacilityProvider.js';
 
 
+
+// ------------------------------------------------------------------------------------------------------
+
+
+
 const criminalElement = document.querySelector("#criminalsContainer");
 const eventHub = document.querySelector(".container");
 
 
 
+// ------------------------------------------------------------------------------------------------------
+
+
+
+/*
+    - These variables hold the current state of the data, even, and most especially, when it changes
+    - Must use LET and not CONST as data is/can be ever changing 
+*/
+
 let criminals = [];
 let facilities = [];
 let criminalFacilities = [];
 
-// Holders of current state of data, even if data changes 
+
+
+// ------------------------------------------------------------------------------------------------------
 
 
 
@@ -37,15 +53,21 @@ export const CriminalList = () => {
 };
 
 
-// Listen for the custom event you dispatched in ConvictionSelect
+
+// ------------------------------------------------------------------------------------------------------
+
+
+
 /*
-- Note about the function parameter below. I have labeled it 'event' - and that 
-  parameter will always be the event - but remember it is sometimes called 
-  simply 'e' and 'evt'
-- When the event takes place (could be when a button is clicked for example) that
-  event is immediately passed into that 2nd parameter function as its parameter
-- The event is an object itself
+    - Listen for the custom event you dispatched in ConvictionSelect
+    - Note about the function parameter below. I have labeled it 'event' - and that 
+      parameter will always be the event - but remember it is sometimes called 
+      simply 'e' and 'evt'
+    - When the event takes place (could be when a button is clicked for example) that
+      event is immediately passed into that 2nd parameter function as its parameter
+    - The event is an object itself
 */
+
 eventHub.addEventListener('crimeChosen', event => {
     // Use the property you added to the event detail.
     if (event.detail.crimeThatWasChosen !== "0"){
@@ -75,6 +97,11 @@ eventHub.addEventListener('crimeChosen', event => {
 });
 
 
+
+// ------------------------------------------------------------------------------------------------------
+
+
+
 eventHub.addEventListener("officerSelected", event => {
     // Accessing officer's name and storing in variable
     const officerName = event.detail.officer
@@ -92,6 +119,10 @@ eventHub.addEventListener("officerSelected", event => {
         )
         render(chosenOfficers);
     });
+
+
+
+// ------------------------------------------------------------------------------------------------------
 
 
   
@@ -113,4 +144,4 @@ eventHub.addEventListener("officerSelected", event => {
                 return Criminals(criminalObject, matchingFacilities)
             }
         ).join("")
-    }
+    };
