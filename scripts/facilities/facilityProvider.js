@@ -1,3 +1,19 @@
+/*
+Example of an object coming from facilities API
+  {
+    "id": 1,
+    "facilityName": "Menard Correctional Center",
+    "securityLevel": "1 – Maximum",
+    "capacity": 3205
+  }
+*/
+
+
+
+// ------------------------------------------------------------------------------------------------------
+
+
+
 let facilities = [];
 
 
