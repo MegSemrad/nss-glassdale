@@ -1,3 +1,17 @@
+/*
+Example of an object coming from criminalFacilities API
+  {
+    "id": 1,
+    "criminalId": 1,
+    "facilityId": 23
+  }
+*/
+
+
+
+// ------------------------------------------------------------------------------------------------------
+
+
 
 let criminalFacilities = [];
 

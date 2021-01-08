@@ -1,8 +1,20 @@
 import { saveNote } from './NoteProvider.js'
 import { useCriminals, getCriminals } from "../criminals/criminalDataProvider.js"
 
+
+
+// ------------------------------------------------------------------------------------------------------
+
+
+
 const contentTarget = document.querySelector(".noteFormContainer")
 const eventHub = document.querySelector(".container")
+
+
+
+// ------------------------------------------------------------------------------------------------------
+
+
 
 /*
 - When this event below occurs (i.e. the Save Note" button is clicked), then all of the 
@@ -40,6 +52,12 @@ eventHub.addEventListener("click", clickEvent => {
     }
 })
 
+
+
+// ------------------------------------------------------------------------------------------------------
+
+
+
 const render = () => {
     const criminalsCollection = useCriminals()
     contentTarget.innerHTML = `
@@ -62,6 +80,10 @@ const render = () => {
 // Map over array and mutate each thing in array and each thing is an object and telling it to return a string
 // Return sth from function map takes that and puts it into new array 
 // End up with an array of... the new array is what gets interpalated 
+
+
+
+// ------------------------------------------------------------------------------------------------------
 
 
 

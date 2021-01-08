@@ -6,6 +6,11 @@ const eventHub = document.querySelector(".container");
 
 
 
+/*
+    - Criminals() is imported only to criminalList.js (I think...)
+*/
+
+
 export const Criminals = (criminalObject, facilities) => {
     return `
     <section class="criminals">
