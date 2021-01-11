@@ -1,15 +1,51 @@
+/*  Example of an object coming from criminals API
+  {
+    "id": 1,
+    "age": 51,
+    "eyeColor": "blue",
+    "name": "Madelyn Lebsack",
+    "workHistory": [
+      "Vandervort Group",
+      "Crooks Group",
+      "Brekke Group"
+    ],
+    "phone": "774-195-7440",
+    "address": "49 Leonardo Shore Suite 938\nLoriview, KY 09715-1234",
+    "incarceration": {
+      "start": "1987-10-03T16:19:42.359Z",
+      "end": "2013-08-15T15:44:04.782Z"
+    },
+    "conviction": "grand theft",
+    "arrestingOfficer": "Lazaro Leuschke",
+    "known_associates": [
+      {
+        "name": "Ebony Hyatt",
+        "alibi": "getting married"
+      }
+    ]
+  }
+*/
+
+
+
+//------------------------------------------------------------------------------------------------------
+
+
+
 let criminals = [];
+
+
+
+/* 
+  - or could write the below as...
+  export const useCriminals = () => criminals.slice();
+*/
 
 export const useCriminals = () => {
     return criminals.slice();
 };
 
-/* or could write the above as...
-export const useCriminals = () => criminals.slice();
 
-- either way we use .slice to get a copy of the criminals array because raw
-  data should always remain unchanged
-*/
 
 export const getCriminals = () => {
     return fetch("https://criminals.glassdale.us/criminals")

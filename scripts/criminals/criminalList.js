@@ -1,3 +1,14 @@
+/*
+    - Responsibility of this module is to control which criminal cards 
+      are displayed in DOM 
+*/
+
+
+
+// ------------------------------------------------------------------------------------------------------
+
+
+
 import { getCriminals, useCriminals } from './criminalDataProvider.js';
 import { Criminals } from './criminals.js';
 import { useConvictions } from '../convictions/convictionProvider.js';
@@ -32,21 +43,22 @@ let criminalFacilities = [];
 
 // ------------------------------------------------------------------------------------------------------
 
-
+/*
+    - CriminalList() function only imported to main.js 
+    - Helps to fill the above empty arrays with the results of these three below functions
+    - Then takes criminals and passes it through render() which is the farthest down the page
+*/
 
 export const CriminalList = () => {
-    // Kick off the fetching of both collections of data
         getCriminals()
         .then(getFacilities)
         .then(getCriminalFacilities)
         .then(
             () => {
-                // Pull in the data now that it has been fetched
                 criminals = useCriminals()
                 facilities = useFacilities()
                 criminalFacilities = useCriminalFacilities()
 
-                // Pass all three collections of data to render()
                 render(criminals)
             }
         )
@@ -59,17 +71,16 @@ export const CriminalList = () => {
 
 
 /*
-    - Listen for the custom event you dispatched in ConvictionSelect
+    - Listen for the custom event dispatched in ConvictionSelect
     - Note about the function parameter below. I have labeled it 'event' - and that 
       parameter will always be the event - but remember it is sometimes called 
       simply 'e' and 'evt'
     - When the event takes place (could be when a button is clicked for example) that
       event is immediately passed into that 2nd parameter function as its parameter
-    - The event is an object itself
+    - This particular event is an object itself
 */
 
 eventHub.addEventListener('crimeChosen', event => {
-    // Use the property you added to the event detail.
     if (event.detail.crimeThatWasChosen !== "0"){
 
         /* parseInt turns it into a number -- need that because 
@@ -103,7 +114,8 @@ eventHub.addEventListener('crimeChosen', event => {
 
 
 eventHub.addEventListener("officerSelected", event => {
-    // Accessing officer's name and storing in variable
+    // Take through dot notation the officer name from the event 
+    // object and store it in a variable
     const officerName = event.detail.officer
 
     // Get criminals arrested by that officer

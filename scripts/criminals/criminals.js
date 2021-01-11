@@ -1,3 +1,13 @@
+/*
+    - Responsibility of this module is to 
+    1. Create the HTML for the criminal cards and also the associate button within the cards
+    2. Listen for click event on the show associates button and dispatch custom event 
+       containing variable with the criminal's id within a variable -- the criminal's id
+       can only be extracted once the Criminals() function is invoked (In main.js only..I think)
+*/
+
+
+
 const eventHub = document.querySelector(".container");
 
 
@@ -31,7 +41,7 @@ export const Criminals = (criminalObject, facilities) => {
             </div>
     </section>
     `
-}
+};
 
 
 
