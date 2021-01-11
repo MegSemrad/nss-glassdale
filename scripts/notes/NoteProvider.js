@@ -1,13 +1,47 @@
-const eventHub = document.querySelector(".container")
-let notes = []
+/*
+    - Responsibility of this module is..
+      1. To GET notes, POST notes, & DELETE notes from the API
+      2. Also to alert to a state change after a deletion or post
+
+*/
+
+
+
+// ------------------------------------------------------------------------------------------------------
+
+
+
+const eventHub = document.querySelector(".container");
+
+
+
+// ------------------------------------------------------------------------------------------------------
+
+
 
 const dispatchStateChangeEvent = () => {
     const noteStateChangedEvent = new CustomEvent("noteStateChanged")
-
+    
     eventHub.dispatchEvent(noteStateChangedEvent)
-}
+};
+
+
+
+// ------------------------------------------------------------------------------------------------------
+
+
+
+let notes = [];
+
+
 
 export const useNotes = () => notes.slice()
+
+
+
+// ------------------------------------------------------------------------------------------------------
+
+
 
 export const getNotes = () => {
     return fetch('http://localhost:8088/notes')
@@ -16,7 +50,14 @@ export const getNotes = () => {
             notes = parsedNotes
         })
 
-}
+};
+
+
+
+// ------------------------------------------------------------------------------------------------------
+
+
+
 /*
 - we are not doing a "GET" for information - we are "POST"-ing newly typed in information
 - note is the new object formed by the user filling out the form 
@@ -28,7 +69,7 @@ export const getNotes = () => {
 - This saveNote is passing through as an arguement any newNote that was created in NoteForm.js
 - Below fetchs the API because we need to interact with it
 - We are posting new information to the database this time rathre than getting
-- SIdenote: when getting info from API fetch defaults to GET so no need to list method: "GET"
+- Sidenote: when getting info from API fetch defaults to GET so no need to list method: "GET"
   when doing that one, but below must say method: "POST"
 - ingnore what the headers are for now
 - Then in body we are telling it what we are sending the note (which is an object - but in the method 
@@ -45,8 +86,16 @@ export const saveNote = note => {
     })
     .then(getNotes)
     .then(dispatchStateChangeEvent)
-}
+};
 
+
+
+// ------------------------------------------------------------------------------------------------------
+
+
+
+// This deleteNote must go here because this module handles data collectino 
+// Must have the noteId on there so do not delete everything 
 
 export const deleteNote = noteId => {
     return fetch(`http://localhost:8088/notes/${noteId}`, {
@@ -54,7 +103,4 @@ export const deleteNote = noteId => {
     })
         .then(getNotes)
         .then(dispatchStateChangeEvent)
-}
-
-// This deleteNote must go here because this module handles data collectino 
-// Again must have the noteId on there so do not delete everything 
+};

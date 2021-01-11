@@ -1,8 +1,8 @@
 /*
-  - The function of this..
-  1. populated the <aside> with criminal notes when the button is clicked
-  2. export the entire NoteList to main.js
-      * Figure out why 
+  - The function of this module is to...
+  1. Keep the list of notes updated at all times. Whether a user asks to view the notes
+     and needs the latest collection, one is deleted, or posted
+  2. Also there is the click event for the delete button (but I don't know why...)
 */
 
 
@@ -30,11 +30,11 @@ const eventHub = document.querySelector(".container");
 // ------------------------------------------------------------------------------------------------------
 
 /*
-  - This listens at eventHub for the custom event that occurs whenever someone 
-    saves or deletes a note 
+   - This listens at eventHub for the click event of someone clicking on
+    the "Show Notes" button 
   - Then NoteList() is invoked and which will invoked both useCriminals()
     and useNotes(). 
-  - Then it is passed through render()
+  - Then it is passed through render() 
 */
 
 eventHub.addEventListener("showNotesClicked", () => {
@@ -48,11 +48,13 @@ eventHub.addEventListener("showNotesClicked", () => {
 
 
 /*
-  - This listens at eventHub for the click event of someone clicking on
-    the "Show Notes" button 
+  - This listens at eventHub for the custom event that occurs whenever someone 
+    saves or deletes a note 
   - Then NoteList() is invoked and which will invoked both useCriminals()
     and useNotes(). 
   - Then it is passed through render()
+  - This ensures the notes will be updated immediately upon action of user (by it
+    deleting or saving a note)
 */
 
 eventHub.addEventListener("noteStateChanged", () => {
@@ -94,7 +96,7 @@ export const NoteList = () => {
     - Side note: all array methods like .map() and .filter() and .find() are
       expecting an arguement that is a function
 
-    - This above function gives instructions are what to do with each item 
+    - This below function gives instructions are what to do with each item 
       in the array - which here is to convert the note objects to HTML 
       with NoteHTMLConverter
     - This gives back a string of HTML - because browser does not deal with
@@ -122,6 +124,8 @@ const render = (noteArray, criminals) => {
           return criminal.id === note.criminalId
         }
       )
+      // (I think...) Here am adding with dot notation the key of criminalName to the note object 
+      // and having its value equal the name taken from associatedCriminal using dot notation
       note.criminalName = associatedCriminal.name
       return NoteHTMLConverter(note)
 }).join("")
